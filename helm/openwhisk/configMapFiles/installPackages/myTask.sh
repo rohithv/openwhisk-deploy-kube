@@ -15,6 +15,11 @@
 # limitations under the License.
 #
 
+# Git config proxy
+git config --global http.proxy http://10.10.78.22:3128
+npm config set proxy http://10.10.78.22:3128
+npm config set https-proxy http://10.10.78.22:3128
+
 export OPENWHISK_HOME=/openwhisk
 
 export PROVIDER_DB_URL=$PROVIDER_DB_PROTOCOL://$PROVIDER_DB_USERNAME:$PROVIDER_DB_PASSWORD@$PROVIDER_DB_HOST:$PROVIDER_DB_PORT
@@ -47,6 +52,8 @@ else
     echo "Must provide a value for WHISK_API_GATEWAY_HOST_V2"
     exit 1
 fi
+
+echo $WHISK_API_HOST_URL
 
 pushd $OPENWHISK_HOME/ansible/roles/routemgmt/files
     # This operation is unreliable in a TravisCI environment (for unknown reasons),

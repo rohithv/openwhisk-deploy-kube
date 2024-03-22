@@ -15,6 +15,9 @@
 # limitations under the License.
 #
 
+# Git config proxy
+git config --global http.proxy http://10.10.78.22:3128
+
 # Clone OpenWhisk to get the ansible playbooks needed to initialize CouchDB
 git clone https://github.com/apache/openwhisk /openwhisk
 pushd /openwhisk

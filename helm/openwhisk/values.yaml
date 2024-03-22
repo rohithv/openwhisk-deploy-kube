@@ -81,7 +81,7 @@ whisk:
       memory:
         min: "128m"
         max: "512m"
-        std: "256m"
+        std: "296m"
       concurrency:
         min: 1
         max: 1
